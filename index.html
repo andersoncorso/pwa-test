@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>PWA Test</title>
+    <meta name="description" content="My app description...">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="APPNAME">
+    <meta itemprop="description" content="My app description...">
+    <meta itemprop="image" content="/img/app-showcase.jpg">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tastejs">
+    <meta name="twitter:title" content="APPNAME">
+    <meta name="twitter:description" content="My app description...">
+    <meta name="twitter:creator" content="@tastejs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image" content="/img/app-showcase.jpg">
+    <meta name="twitter:image:alt" content="My app description...">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="APPNAME" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myurlsite.com.br" />
+    <meta property="og:image" content="/img/app-showcase.jpg"/>
+    <meta property="og:description" content="My app description..." />
 
     <!-- Favicon and App icons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-icon-57x57.png">
@@ -23,11 +48,16 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
+    <link rel="canonical" href="https://myurlsite.com.br/">
+
     <!-- PWA  -->
     <link rel='manifest' href='manifest.json'>
     <meta name="msapplication-TileColor" content="#317EFB">
     <meta name="msapplication-TileImage" content="/img/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#317EFB">
+
+    <!-- Google Analytics -->
+    <!-- code here  -->
 
 </head>
 <body>
@@ -38,25 +68,8 @@
             This is only test with PWA.
         </p>
     </div>
+    
+    <script src="main.js"></script>
 
-    <script>
-
-        /**
-         *  PWA - Service Worker
-         */
-        if ('serviceWorker' in navigator) {
-
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js').then(function(registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                },
-                function(err) {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
-
-        }
-        
-    </script>
 </body>
 </html>

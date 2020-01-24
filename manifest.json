@@ -2,12 +2,11 @@
         "name" : "PWA Test",
         "short_name" : "PWA",
         "description" : "This is only test with PWA.",
-        "start_url" : "http://localhost:81/pwa/test01/",
+        "start_url" : "index.html",
         "lang" : "Portuguese",
         "theme_color": "#93B000",
         "background_color": "#ffffff",
         "display": "standalone",
-        "scope": "/",
         "orientation": "any",
         "icons": [           
             {

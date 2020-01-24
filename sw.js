@@ -1,19 +1,26 @@
-var CACHE_NAME = 'cache-v1';
-var urlsToCache = [
-  '/'
+const CACHE_NAME = 'cache-v1';
+const URLS_TO_CACHE = [
+  '/',
+  'index.html'
 ];
 
 self.addEventListener('install', function(event) {
+
+  console.log('Install event!');
 
   // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
         console.log('Opened cache');
-        return cache.addAll(urlsToCache);
+        return cache.addAll(URLS_TO_CACHE);
       })
   );
 
+});
+
+self.addEventListener('activate', event => {
+  console.log('Activate event!');
 });
 
 self.addEventListener('fetch', function(event) {
